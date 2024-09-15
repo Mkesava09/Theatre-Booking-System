@@ -1,10 +1,10 @@
 class Theatre:
-    def _init_(self, rows=5, seats_per_row=10):
+    def __init__(self, rows=5, seats_per_row=10):  # Corrected constructor method
         # Initialize the seating arrangement with empty ('O') seats
         self.rows = rows
         self.seats_per_row = seats_per_row
         self.seating = [['O' for _ in range(seats_per_row)] for _ in range(rows)]
-    
+
     def display_seating(self):
         print("\nTheatre Seating Arrangement:")
         print("  " + " ".join([str(i+1).rjust(2, ' ') for i in range(self.seats_per_row)]))
@@ -48,7 +48,6 @@ def main():
 
         if choice == '1':
             theatre.display_seating()
-            
         elif choice == '2':
             theatre.display_seating()
             row = input("\nEnter the row (A-E): ").upper()
@@ -65,3 +64,5 @@ def main():
             break
         else:
             print("Invalid choice. Please select from the options.")
+if __name__ == "__main__":
+    main()
